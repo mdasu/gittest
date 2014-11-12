@@ -14,7 +14,7 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
 <flow name="test">
    <http:inbound-endpoint exchange-pattern="one-way"
       host="localhost" port="8081" path="search"/>
-   <db:select config-ref="Database_Connector">
+   <db:select config-ref="Database_Connector"> 
        <db:dynamic-query>
            <![CDATA[SELECT * FROM users WHERE (firstname=#[message.inboundProperties['firstname']])]]>
        </db:dynamic-query>
